@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shirish Khanal | Researcher & Data Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f6;
+  --bg-alt: #f0eeea;
+  --text: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b6b6b;
+  --accent: #8b2500;
+  --accent-light: #c44d2a;
+  --accent-faint: rgba(139,37,0,0.06);
+  --border: #d4d0c8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --max-width: 960px;
+  --nav-height: 56px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,249,246,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-height);
+}
+nav .nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 32px;
+}
+nav .nav-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav .nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin-left: auto;
+}
+nav .nav-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+  position: relative;
+}
+nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+nav .nav-links a:hover { color: var(--accent); }
+nav .nav-links a:hover::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ─── HERO ─── */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 24px 48px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.hero-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px;
+  border: 3px solid var(--border);
+  filter: grayscale(15%);
+}
+.hero-content h1 {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.hero-content .subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+.hero-content .bio {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+.hero-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.hero-links a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 28px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ─── RESEARCH ─── */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.research-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+.research-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.research-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ─── EXPERIENCE TIMELINE ─── */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2.5px solid var(--accent);
+}
+.timeline-item h3 {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.timeline-item .meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-style: italic;
+}
+.timeline-item p, .timeline-item ul {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.timeline-item ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+.timeline-item li { margin-bottom: 4px; }
+
+/* ─── EDUCATION ─── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.edu-card {
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  background: var(--accent-faint);
+  border-radius: 0 6px 6px 0;
+}
+.edu-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.edu-card .school {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.edu-card .details {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ─── SKILLS ─── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.skill-group h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.skill-tag {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+/* ─── PROJECTS ─── */
+.project-item {
+  margin-bottom: 28px;
+  padding: 20px 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.project-item h3 {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.project-item .proj-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.project-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ─── PERSONAL ─── */
+.personal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.personal-card {
+  padding: 20px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.personal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.personal-card > * { position: relative; z-index: 1; }
+.personal-card.card-trek::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cpolygon points='0,120 40,40 80,80 120,20 160,60 200,10 200,120' fill='%234a6741'/%3E%3Cpolygon points='0,120 30,70 70,90 110,50 150,75 200,30 200,120' fill='%235a7a50'/%3E%3Cpolygon points='0,120 50,90 100,100 150,85 200,95 200,120' fill='%236b8c60'/%3E%3C/svg%3E");
+  opacity: 0.12;
+}
+.personal-card.card-sports::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='%23333' stroke-width='3'/%3E%3Cpath d='M100 20 L100 180 M20 100 L180 100 M35 35 L165 165 M165 35 L35 165' stroke='%23333' stroke-width='1.5' opacity='0.5'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.06;
+}
+.personal-card.card-photo::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect x='30' y='30' width='140' height='90' rx='8' fill='none' stroke='%23555' stroke-width='3'/%3E%3Ccircle cx='100' cy='75' r='28' fill='none' stroke='%23555' stroke-width='2.5'/%3E%3Ccircle cx='100' cy='75' r='18' fill='none' stroke='%23555' stroke-width='1.5'/%3E%3Crect x='55' y='35' width='20' height='10' rx='3' fill='%23555' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.07;
+}
+.personal-card.card-running::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M0 60 Q25 40 50 55 Q75 70 100 50 Q125 30 150 45 Q175 60 200 40' fill='none' stroke='%23777' stroke-width='2'/%3E%3Cpath d='M0 70 Q25 55 50 65 Q75 75 100 60 Q125 45 150 55 Q175 65 200 50' fill='none' stroke='%23777' stroke-width='1.5' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.1;
+}
+.personal-card.card-politics::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160'%3E%3Crect x='60' y='40' width='80' height='100' rx='2' fill='none' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='60' x2='125' y2='60' stroke='%23666' stroke-width='1.5'/%3E%3Cline x1='75' y1='75' x2='125' y2='75' stroke='%23666' stroke-width='1'/%3E%3Cline x1='75' y1='88' x2='115' y2='88' stroke='%23666' stroke-width='1'/%3E%3Cline x1='75' y1='101' x2='120' y2='101' stroke='%23666' stroke-width='1'/%3E%3Cline x1='75' y1='114' x2='110' y2='114' stroke='%23666' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 0.07;
+}
+.personal-card.card-jyotish::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%23886644' stroke-width='1.5'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='%23886644' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%23886644' stroke-width='1'/%3E%3Cline x1='100' y1='30' x2='100' y2='170' stroke='%23886644' stroke-width='0.8'/%3E%3Cline x1='30' y1='100' x2='170' y2='100' stroke='%23886644' stroke-width='0.8'/%3E%3Cline x1='50' y1='50' x2='150' y2='150' stroke='%23886644' stroke-width='0.8'/%3E%3Cline x1='150' y1='50' x2='50' y2='150' stroke='%23886644' stroke-width='0.8'/%3E%3Ccircle cx='100' cy='40' r='3' fill='%23886644'/%3E%3Ccircle cx='140' cy='60' r='2.5' fill='%23886644'/%3E%3Ccircle cx='155' cy='100' r='2' fill='%23886644'/%3E%3Ccircle cx='70' cy='140' r='3' fill='%23886644'/%3E%3C/svg%3E");
+  opacity: 0.09;
+}
+.personal-card .icon {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.personal-card h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.personal-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 20px 32px;
+    text-align: center;
+  }
+  .hero-photo {
+    margin: 0 auto;
+    width: 150px;
+    height: 185px;
+  }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-links { justify-content: center; }
+  .nav .nav-links { display: none; }
+  .hamburger { display: block; }
+  nav.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    gap: 12px;
+  }
+  .section { padding: 36px 20px; }
+  .section-title { font-size: 1.45rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="top">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name"></a>
+    <button class="hamburger" onclick="this.closest('nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#personal">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="" alt="Shirish Khanal" class="hero-photo">
+  <div class="hero-content">
+    <h1>Shirish Khanal</h1>
+    <p class="subtitle">Senior Data Engineer, Researcher, Incoming PhD Student</p>
+    <p class="bio">
+      I am a Senior Data Engineer and researcher with six years of experience in scalable data architecture and machine learning. I am transitioning into a PhD program in Computer and Statistical Sciences at the University of Rhode Island. My research interests focus on trustworthy and explainable AI, causal reasoning, algorithmic fairness, and biomedical applications.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:khanalshirish@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/shirish-khanal/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="research">
+  <h2 class="section-title">Research Interests</h2>
+  <div class="research-grid">
+    <div class="research-card">
+      <h3>Trustworthy & Explainable AI</h3>
+      <p>Developing computational methods that prioritize rigorous methodology over surface performance to ensure AI is transparent and reliable for high-stakes decision-making.</p>
+    </div>
+    <div class="research-card">
+      <h3>Causal Representation Learning</h3>
+      <p>Building models that capture true cause-and-effect relationships rather than mere correlations to distinguish genuine predictive signals from retrospective labels.</p>
+    </div>
+    <div class="research-card">
+      <h3>Algorithmic Fairness</h3>
+      <p>Investigating how to build equitable AI systems by exploring the intersection of machine learning and social science to prevent algorithms from perpetuating systemic flaws.</p>
+    </div>
+    <div class="research-card">
+      <h3>Biomedical ML Application</h3>
+      <p>Applying machine learning to clinical decision support and disease phenotyping to transform noisy, unstructured clinical data into robust, actionable evidence.</p>
+    </div>
+    <div class="research-card">
+      <h3>Scalable ML Systems</h3>
+      <p>Optimizing large-scale distributed pipelines and high-performance infrastructure to efficiently support complex modeling and real-world AI research at scale.</p>
+    </div>
+    <div class="research-card">
+      <h3>Natural Language Processing</h3>
+      <p>Exploring NLP tasks within the biomedical domain to make language models more robust, interpretable, and effective at handling sparse, high-dimensional clinical text.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <h2 class="section-title">Research Experience</h2>
+
+  <div class="project-item">
+    <h3>Computational Healthcare Analytics & Predictive Modeling</h3>
+    <p class="proj-meta">Master's Capstone, East Tennessee State University, 2022-2023</p>
+    <p>I developed an end-to-end predictive analytics pipeline using HCUP inpatient datasets to forecast hospital readmissions and mortality. Over the course of the project, I trained and evaluated sixteen different machine learning and neural network models using metrics like AUC, ROC, precision, and recall. A major insight came while conducting an error analysis on the mortality model. I discovered target leakage was artificially boosting its accuracy by using billing codes generated after a patient's death. This experience deeply shaped my research philosophy, highlighting the fundamental limitation of models that optimize for accuracy without the causal reasoning needed to separate genuine predictive signals from retrospective labels. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/healthcare-predictive-modeling" target="_blank" style="color:var(--accent)">GitHub repository</a>)</em>.</p>
+  </div>
+
+  <div class="project-item">
+    <h3>Disease Phenotyping from Biomedical Text</h3>
+    <p class="proj-meta">ETSU, 2022</p>
+    <p>In this project, I built a disease diagnosis classification system by mining biomedical literature. I extracted over 40,000 symptom-related clinical abstracts directly from PubMed. After implementing thorough NLP preprocessing, I trained and compared six different classifiers, ranging from traditional algorithms to deep learning models like CNNs and Bidirectional RNNs. Interestingly, I found that a Linear Support Vector Machine (SVM) outperformed the complex neural networks, achieving over 93% accuracy. This work proved to me that on sparse, high-dimensional feature spaces typical of medical text, simpler and more interpretable algorithms can often be far more effective and reliable than black-box deep learning approaches. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/disease-phenotype" target="_blank" style="color:var(--accent)">GitHub repository</a>)</em>.</p>
+  </div>
+
+  <div class="project-item">
+    <h3>Sports Analytics with Sentiment-Enhanced ML</h3>
+    <p class="proj-meta">ETSU, 2022</p>
+    <p>I led a project to predict player performance in the Fantasy Premier League by combining traditional statistics with public sentiment. Using the Twitter API, I collected a dataset of over 91,000 social media posts discussing specific players and teams. I explored different natural language processing techniques and found out that transformer-based roBERTa model was much better at understanding Twitter-specific jargon but it was significantly more computationally intensive. By integrating these sentiment-derived signals with standard time-series performance data, I was able to improve the overall prediction accuracy of models like LSTMs. This project was a great exercise in multi-modal feature integration, showing how qualitative public sentiment can be quantified to enhance predictive algorithms.</p>
+  </div>
+
+  <div class="project-item">
+    <h3>GenAI-Powered RAG Systems</h3>
+    <p class="proj-meta">Deutsche Bank, 2024-2025</p>
+    <p>I designed GenAI solutions using Google Gemini, implementing RAG pipelines with embeddings and vector search. I enabled LLM-driven text classification and contextual inference for production data pipelines.</p>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Senior Data Engineer, Fiserv</h3>
+      <p class="meta">Alpharetta, GA, Jan 2026 - Present</p>
+      <p>I am leading the migration of legacy Informatica ETL pipelines to AWS Glue with Apache Airflow. I am re-architecting mappings into Spark-native transformations, orchestrating batch workflows, and loading curated datasets into Snowflake.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Senior Data Engineer, Deutsche Bank</h3>
+      <p class="meta">Cary, NC, Oct 2023 - Dec 2025</p>
+      <p>I owned the design of cloud-native data pipelines on GCP using PySpark and Dataproc. I led the migration of on-prem Cloudera workloads, automated infrastructure with Terraform, built CI/CD pipelines, and deployed GenAI solutions using Google Gemini with RAG.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Software Engineer, Deerwalk Services (Cedar Gate Technologies)</h3>
+      <p class="meta">Kathmandu, Nepal, Nov 2017 - Aug 2021</p>
+      <p>I built batch ETL pipelines for HIPAA-regulated healthcare data using Java, Python, Spark, and AWS. I performed large-scale data wrangling and contributed to risk prediction model development.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Teaching & Service</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Graduate Teaching Assistant, Computer Science</h3>
+      <p class="meta">East Tennessee State University, 2022-2023</p>
+      <p>I taught CS courses for 150+ students, led lab sessions, conducted code reviews, and mentored incoming teaching assistants.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Graduate Assistant, Access ETSU</h3>
+      <p class="meta">East Tennessee State University, 2021-2022</p>
+      <p>I served as a Graduate Assistant, promoting access, inclusion, and academic support for students with diverse learning needs.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h3>PhD in Computer Science</h3>
+      <p class="school">University of Rhode Island</p>
+      <p class="details">Computer and Statistical Sciences, Fall 2026 (Incoming)</p>
+    </div>
+    <div class="edu-card">
+      <h3>M.S. in Computer Science</h3>
+      <p class="school">East Tennessee State University</p>
+      <p class="details">Machine Learning & AI, Aug 2021 - May 2023<br>GPA: 4.0 / 4.0</p>
+    </div>
+    <div class="edu-card">
+      <h3>B.S. in Computer Science</h3>
+      <p class="school">Kathmandu University</p>
+      <p class="details">Aug 2013 - Oct 2017<br>I graduated in the top 5% of my class</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Languages</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">PySpark</span>
+        <span class="skill-tag">Scala</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">TypeScript</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Big Data & Processing</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Apache Spark</span>
+        <span class="skill-tag">Hadoop</span>
+        <span class="skill-tag">Hive</span>
+        <span class="skill-tag">AWS Glue</span>
+        <span class="skill-tag">GCP Dataproc</span>
+        <span class="skill-tag">Apache Iceberg</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Cloud Platforms</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">GCP</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">BigQuery</span>
+        <span class="skill-tag">Snowflake</span>
+        <span class="skill-tag">S3</span>
+        <span class="skill-tag">EMR</span>
+        <span class="skill-tag">Redshift</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>ML / NLP</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">Keras</span>
+        <span class="skill-tag">VADER</span>
+        <span class="skill-tag">Embeddings</span>
+        <span class="skill-tag">RAG</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Orchestration & DevOps</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Apache Airflow</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">GitHub Actions</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Databases & Visualization</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Power BI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="personal">
+  <h2 class="section-title">Beyond Research</h2>
+  <div class="personal-grid">
+
+    <div class="personal-card card-trek">
+      <div class="icon">&#9968;</div>
+      <h4>Trekking</h4>
+      <p>I love hitting the trails and have completed several high-altitude treks across Nepal. My journey so far includes crossing the Annapurna Circuit (5,416m) and reaching spots like Mardi Himal Base Camp (4,500m), Gosainkunda (4,380m), Annapurna Base Camp (4,130m), Langtang Valley (3,870m), and Shey Phoksundo Lake (3,611m).</p>
+    </div>
+
+    <div class="personal-card card-sports">
+      <div class="icon">&#9917;</div>
+      <h4>Sports</h4>
+      <p>I'm a massive football (soccer) fan and a huge Arsenal FC supporter. I'm also a big Formula 1 enthusiast, Lewis Hamilton is my favorite driver.</p>
+    </div>
+
+    <div class="personal-card card-photo">
+      <div class="icon">&#128247;</div>
+      <h4>Photography</h4>
+      <p>I'm starting to get into visual storytelling and photography. I'm mostly focusing on developing a technical eye for composition and light. <a href="https://www.instagram.com/shirishhhh" target="_blank" style="color:var(--accent);font-weight:600;">@shirishhhh</a></p>
+    </div>
+
+    <div class="personal-card card-running">
+      <div class="icon">&#127939;</div>
+      <h4>Running</h4>
+      <p>I'm currently trying my hand at distance running. I'm very much a beginner, just focusing on building up my endurance and trying to stay consistent.</p>
+    </div>
+
+    <div class="personal-card card-politics">
+      <div class="icon">&#127970;</div>
+      <h4>Political & Social Research</h4>
+      <p>I occasionally read up on different political systems and social structures, mostly out of personal curiosity about how things are organized behind the scenes.</p>
+    </div>
+
+    <div class="personal-card card-jyotish">
+      <div class="icon">&#9734;</div>
+      <h4>Vedic Astrology (Jyotish)</h4>
+      <p>I spend some time studying classical Jyotish. I enjoy applying an analytical and systematic approach to it, exploring personality patterns and life cycles through this ancient framework.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Shirish Khanal</p>
+</footer>
+
+</body>
+</html>
+```
