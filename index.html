@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shirish Khanal | Researcher & Data Engineer</title>
-<meta name="description" content="Shirish Khanal is a Senior Data Engineer and incoming PhD student at the University of Rhode Island, researching trustworthy AI, causal reasoning, and algorithmic fairness.">
-<meta property="og:title" content="Shirish Khanal | Researcher & Data Engineer">
-<meta property="og:description" content="Senior Data Engineer and incoming PhD student at URI, researching explainable AI, causal representation learning, and biomedical ML.">
-<meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -40,28 +36,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  opacity: 0.45;
-}
-
-/* ─── SCROLL REVEAL ─── */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s ease var(--reveal-delay, 0s), transform 0.55s ease var(--reveal-delay, 0s);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ─── NAV ─── */
 nav {
   position: sticky;
@@ -69,7 +43,6 @@ nav {
   z-index: 100;
   background: rgba(250,249,246,0.92);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   height: var(--nav-height);
 }
@@ -84,12 +57,11 @@ nav .nav-inner {
 }
 nav .nav-name {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
   text-decoration: none;
-  letter-spacing: 0.01em;
-  flex-shrink: 0;
+  letter-spacing: 0.02em;
 }
 nav .nav-links {
   display: flex;
@@ -102,7 +74,8 @@ nav .nav-links a {
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   transition: color 0.2s;
   position: relative;
 }
@@ -116,10 +89,8 @@ nav .nav-links a::after {
   background: var(--accent);
   transition: width 0.25s;
 }
-nav .nav-links a:hover,
-nav .nav-links a.active { color: var(--accent); }
-nav .nav-links a:hover::after,
-nav .nav-links a.active::after { width: 100%; }
+nav .nav-links a:hover { color: var(--accent); }
+nav .nav-links a:hover::after { width: 100%; }
 
 .hamburger {
   display: none;
@@ -142,10 +113,10 @@ nav .nav-links a.active::after { width: 100%; }
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 72px 24px 56px;
+  padding: 64px 24px 48px;
   display: grid;
   grid-template-columns: 180px 1fr;
-  gap: 52px;
+  gap: 48px;
   align-items: start;
 }
 .hero-photo {
@@ -155,36 +126,32 @@ nav .nav-links a.active::after { width: 100%; }
   object-position: top;
   border-radius: 6px;
   border: 3px solid var(--border);
-  filter: grayscale(20%);
+  filter: grayscale(15%);
 }
 .hero-content h1 {
   font-family: var(--serif);
-  font-size: 3.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
   color: var(--text);
-  margin-bottom: 8px;
-  text-wrap: balance;
+  margin-bottom: 4px;
 }
 .hero-content .subtitle {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-style: italic;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 300;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
 }
 .hero-content .bio {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin-bottom: 24px;
-  line-height: 1.72;
+  max-width: 620px;
+  margin-bottom: 20px;
 }
 .hero-links {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 .hero-links a {
@@ -193,79 +160,73 @@ nav .nav-links a.active::after { width: 100%; }
   color: var(--accent);
   text-decoration: none;
   letter-spacing: 0.04em;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border: 1.5px solid var(--accent);
   border-radius: 4px;
-  transition: background 0.2s, color 0.2s, transform 0.15s;
+  transition: all 0.2s;
 }
-.hero-links a:hover { background: var(--accent); color: #fff; }
-.hero-links a:active { transform: scale(0.97); }
+.hero-links a:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 /* ─── SECTIONS ─── */
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 52px 24px;
+  padding: 48px 24px;
 }
-.section + .section { border-top: 1px solid var(--border); }
+.section + .section {
+  border-top: 1px solid var(--border);
+}
 .section-title {
   font-family: var(--serif);
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   position: relative;
-  padding-bottom: 12px;
-  letter-spacing: -0.01em;
+  padding-bottom: 10px;
 }
 .section-title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
-  height: 2px;
+  width: 48px;
+  height: 3px;
   background: var(--accent);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 /* ─── RESEARCH ─── */
 .research-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 64px;
-  counter-reset: research-counter;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 .research-card {
-  padding: 28px 0 28px 52px;
-  border-top: 1px solid var(--border);
-  counter-increment: research-counter;
-  position: relative;
-  background: none;
-  border-radius: 0;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.research-card::before {
-  content: counter(research-counter, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 30px;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  opacity: 0.6;
-  letter-spacing: 0.04em;
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 .research-card h3 {
   font-family: var(--serif);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--accent);
   margin-bottom: 8px;
 }
 .research-card p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.68;
+  line-height: 1.65;
 }
 
 /* ─── EXPERIENCE TIMELINE ─── */
@@ -276,135 +237,130 @@ nav .nav-links a.active::after { width: 100%; }
   left: 5px;
   top: 8px;
   bottom: 8px;
-  width: 1.5px;
+  width: 2px;
   background: var(--border);
 }
 .timeline-item {
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 .timeline-item::before {
   content: '';
   position: absolute;
   left: -28px;
-  top: 8px;
-  width: 11px;
-  height: 11px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px rgba(139,37,0,0.15);
+  background: var(--bg);
+  border: 2.5px solid var(--accent);
 }
 .timeline-item h3 {
-  font-size: 1.05rem;
+  font-family: var(--sans);
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
 }
 .timeline-item .meta {
   font-size: 0.82rem;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-style: italic;
 }
 .timeline-item p, .timeline-item ul {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.68;
+  line-height: 1.65;
 }
-.timeline-item ul { padding-left: 18px; margin-top: 6px; }
+.timeline-item ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
 .timeline-item li { margin-bottom: 4px; }
 
 /* ─── EDUCATION ─── */
 .edu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 .edu-card {
-  border-left: 2px solid var(--border);
-  padding: 18px 20px;
-  background: none;
-  border-radius: 0;
-  transition: border-color 0.2s;
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  background: var(--accent-faint);
+  border-radius: 0 6px 6px 0;
 }
-.edu-card:hover { border-left-color: var(--accent); }
 .edu-card h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--text);
+  margin-bottom: 2px;
 }
 .edu-card .school {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--accent);
 }
 .edu-card .details {
   font-size: 0.82rem;
   color: var(--text-muted);
-  margin-top: 6px;
-  line-height: 1.55;
+  margin-top: 4px;
 }
 
 /* ─── SKILLS ─── */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px 16px;
+  gap: 16px;
 }
 .skill-group h4 {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 700;
 }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
 .skill-tag {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   padding: 4px 10px;
   border-radius: 3px;
   color: var(--text-secondary);
-  transition: all 0.15s;
-  cursor: default;
-}
-.skill-tag:hover {
-  background: var(--accent-faint);
-  border-color: rgba(139,37,0,0.25);
-  color: var(--accent);
 }
 
-/* ─── RESEARCH EXPERIENCE / PROJECTS ─── */
+/* ─── PROJECTS ─── */
 .project-item {
   margin-bottom: 28px;
-  padding: 20px 0 20px 24px;
-  border-left: 2px solid var(--border);
-  background: none;
-  border-radius: 0;
-  transition: border-color 0.2s;
+  padding: 20px 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
 }
-.project-item:hover { border-left-color: var(--accent); }
 .project-item h3 {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--accent);
   margin-bottom: 4px;
 }
 .project-item .proj-meta {
   font-size: 0.82rem;
   color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .project-item p {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.68;
+  line-height: 1.65;
 }
 
 /* ─── PERSONAL ─── */
@@ -414,17 +370,12 @@ nav .nav-links a.active::after { width: 100%; }
   gap: 16px;
 }
 .personal-card {
-  padding: 24px;
+  padding: 20px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 6px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.personal-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139,37,0,0.07);
 }
 .personal-card::before {
   content: '';
@@ -432,6 +383,7 @@ nav .nav-links a.active::after { width: 100%; }
   top: 0; right: 0; bottom: 0; left: 0;
   background-size: cover;
   background-position: center;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
@@ -461,20 +413,19 @@ nav .nav-links a.active::after { width: 100%; }
   opacity: 0.09;
 }
 .personal-card .icon {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
 }
 .personal-card h4 {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--text);
 }
 .personal-card p {
   font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.58;
+  line-height: 1.55;
 }
 
 /* ─── FOOTER ─── */
@@ -482,21 +433,10 @@ footer {
   border-top: 1px solid var(--border);
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 36px 24px;
+  padding: 32px 24px;
   text-align: center;
   font-size: 0.82rem;
   color: var(--text-muted);
-}
-footer a {
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1px;
-  transition: color 0.2s, border-color 0.2s;
-}
-footer a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
 }
 
 /* ─── RESPONSIVE ─── */
@@ -507,10 +447,14 @@ footer a:hover {
     padding: 40px 20px 32px;
     text-align: center;
   }
-  .hero-photo { margin: 0 auto; width: 150px; height: 185px; }
-  .hero-content h1 { font-size: 2.4rem; }
+  .hero-photo {
+    margin: 0 auto;
+    width: 150px;
+    height: 185px;
+  }
+  .hero-content h1 { font-size: 2rem; }
   .hero-links { justify-content: center; }
-  nav .nav-links { display: none; }
+  .nav .nav-links { display: none; }
   .hamburger { display: block; }
   nav.open .nav-links {
     display: flex;
@@ -524,9 +468,8 @@ footer a:hover {
     padding: 16px 24px;
     gap: 12px;
   }
-  .section { padding: 40px 20px; }
-  .section-title { font-size: 1.55rem; }
-  .research-grid { grid-template-columns: 1fr; gap: 0; }
+  .section { padding: 36px 20px; }
+  .section-title { font-size: 1.45rem; }
 }
 </style>
 </head>
@@ -534,7 +477,7 @@ footer a:hover {
 
 <nav id="top">
   <div class="nav-inner">
-    <a href="#top" class="nav-name">Shirish Khanal</a>
+    <a href="#top" class="nav-name"></a>
     <button class="hamburger" onclick="this.closest('nav').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -553,7 +496,7 @@ footer a:hover {
   <img src="Khanal_Shirish_5856b.jpg" alt="Shirish Khanal" class="hero-photo">
   <div class="hero-content">
     <h1>Shirish Khanal</h1>
-    <p class="subtitle">Senior Data Engineer &middot; Researcher &middot; Incoming PhD Student</p>
+    <p class="subtitle">Senior Data Engineer, Researcher, Incoming PhD Student</p>
     <p class="bio">
       I am a Senior Data Engineer and researcher with six years of experience in scalable data architecture and machine learning. I am transitioning into a PhD program in Computer and Statistical Sciences at the University of Rhode Island. My research interests focus on trustworthy and explainable AI, causal reasoning, algorithmic fairness, and biomedical applications.
     </p>
@@ -568,7 +511,7 @@ footer a:hover {
   <h2 class="section-title">Research Interests</h2>
   <div class="research-grid">
     <div class="research-card">
-      <h3>Trustworthy &amp; Explainable AI</h3>
+      <h3>Trustworthy & Explainable AI</h3>
       <p>Developing computational methods that prioritize rigorous methodology over surface performance to ensure AI is transparent and reliable for high-stakes decision-making.</p>
     </div>
     <div class="research-card">
@@ -598,8 +541,8 @@ footer a:hover {
   <h2 class="section-title">Research Experience</h2>
 
   <div class="project-item">
-    <h3>Computational Healthcare Analytics &amp; Predictive Modeling</h3>
-    <p class="proj-meta">Master's Capstone, East Tennessee State University, 2022&ndash;2023</p>
+    <h3>Computational Healthcare Analytics & Predictive Modeling</h3>
+    <p class="proj-meta">Master's Capstone, East Tennessee State University, 2022-2023</p>
     <p>I developed an end-to-end predictive analytics pipeline using HCUP inpatient datasets to forecast hospital readmissions and mortality. Over the course of the project, I trained and evaluated sixteen different machine learning and neural network models using metrics like AUC, ROC, precision, and recall. A major insight came while conducting an error analysis on the mortality model. I discovered target leakage was artificially boosting its accuracy by using billing codes generated after a patient's death. This experience deeply shaped my research philosophy, highlighting the fundamental limitation of models that optimize for accuracy without the causal reasoning needed to separate genuine predictive signals from retrospective labels. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/healthcare-predictive-modeling" target="_blank" style="color:var(--accent)">GitHub repository</a>)</em>.</p>
   </div>
 
@@ -612,12 +555,12 @@ footer a:hover {
   <div class="project-item">
     <h3>Sports Analytics with Sentiment-Enhanced ML</h3>
     <p class="proj-meta">ETSU, 2022</p>
-    <p>I led a project to predict player performance in the Fantasy Premier League by combining traditional statistics with public sentiment. Using the Twitter API, I collected a dataset of over 91,000 social media posts discussing specific players and teams. I explored different natural language processing techniques and found that a transformer-based roBERTa model was much better at understanding Twitter-specific jargon but significantly more computationally intensive. By integrating these sentiment-derived signals with standard time-series performance data, I was able to improve the overall prediction accuracy of models like LSTMs. This project was a great exercise in multi-modal feature integration, showing how qualitative public sentiment can be quantified to enhance predictive algorithms.</p>
+    <p>I led a project to predict player performance in the Fantasy Premier League by combining traditional statistics with public sentiment. Using the Twitter API, I collected a dataset of over 91,000 social media posts discussing specific players and teams. I explored different natural language processing techniques and found out that transformer-based roBERTa model was much better at understanding Twitter-specific jargon but it was significantly more computationally intensive. By integrating these sentiment-derived signals with standard time-series performance data, I was able to improve the overall prediction accuracy of models like LSTMs. This project was a great exercise in multi-modal feature integration, showing how qualitative public sentiment can be quantified to enhance predictive algorithms.</p>
   </div>
 
   <div class="project-item">
     <h3>GenAI-Powered RAG Systems</h3>
-    <p class="proj-meta">Deutsche Bank, 2024&ndash;2025</p>
+    <p class="proj-meta">Deutsche Bank, 2024-2025</p>
     <p>I designed GenAI solutions using Google Gemini, implementing RAG pipelines with embeddings and vector search. I enabled LLM-driven text classification and contextual inference for production data pipelines.</p>
   </div>
 </section>
@@ -628,38 +571,38 @@ footer a:hover {
 
     <div class="timeline-item">
       <h3>Senior Data Engineer, Fiserv</h3>
-      <p class="meta">Alpharetta, GA &middot; Jan 2026 &ndash; Present</p>
+      <p class="meta">Alpharetta, GA, Jan 2026 - Present</p>
       <p>I am leading the migration of legacy Informatica ETL pipelines to AWS Glue with Apache Airflow. I am re-architecting mappings into Spark-native transformations, orchestrating batch workflows, and loading curated datasets into Snowflake.</p>
     </div>
 
     <div class="timeline-item">
       <h3>Senior Data Engineer, Deutsche Bank</h3>
-      <p class="meta">Cary, NC &middot; Oct 2023 &ndash; Dec 2025</p>
+      <p class="meta">Cary, NC, Oct 2023 - Dec 2025</p>
       <p>I owned the design of cloud-native data pipelines on GCP using PySpark and Dataproc. I led the migration of on-prem Cloudera workloads, automated infrastructure with Terraform, built CI/CD pipelines, and deployed GenAI solutions using Google Gemini with RAG.</p>
     </div>
 
     <div class="timeline-item">
       <h3>Software Engineer, Deerwalk Services (Cedar Gate Technologies)</h3>
-      <p class="meta">Kathmandu, Nepal &middot; Nov 2017 &ndash; Aug 2021</p>
+      <p class="meta">Kathmandu, Nepal, Nov 2017 - Aug 2021</p>
       <p>I built batch ETL pipelines for HIPAA-regulated healthcare data using Java, Python, Spark, and AWS. I performed large-scale data wrangling and contributed to risk prediction model development.</p>
     </div>
 
   </div>
 </section>
 
-<section class="section" id="teaching">
-  <h2 class="section-title">Teaching &amp; Service</h2>
+<section class="section">
+  <h2 class="section-title">Teaching & Service</h2>
   <div class="timeline">
 
     <div class="timeline-item">
       <h3>Graduate Teaching Assistant, Computer Science</h3>
-      <p class="meta">East Tennessee State University &middot; 2022&ndash;2023</p>
+      <p class="meta">East Tennessee State University, 2022-2023</p>
       <p>I taught CS courses for 150+ students, led lab sessions, conducted code reviews, and mentored incoming teaching assistants.</p>
     </div>
 
     <div class="timeline-item">
       <h3>Graduate Assistant, Access ETSU</h3>
-      <p class="meta">East Tennessee State University &middot; 2021&ndash;2022</p>
+      <p class="meta">East Tennessee State University, 2021-2022</p>
       <p>I served as a Graduate Assistant, promoting access, inclusion, and academic support for students with diverse learning needs.</p>
     </div>
 
@@ -672,17 +615,17 @@ footer a:hover {
     <div class="edu-card">
       <h3>PhD in Computer Science</h3>
       <p class="school">University of Rhode Island</p>
-      <p class="details">Computer and Statistical Sciences<br>Fall 2026 (Incoming)</p>
+      <p class="details">Computer and Statistical Sciences, Fall 2026 (Incoming)</p>
     </div>
     <div class="edu-card">
       <h3>M.S. in Computer Science</h3>
       <p class="school">East Tennessee State University</p>
-      <p class="details">Machine Learning &amp; AI<br>Aug 2021 &ndash; May 2023 &middot; GPA 4.0</p>
+      <p class="details">Machine Learning & AI, Aug 2021 - May 2023<br>GPA: 4.0 / 4.0</p>
     </div>
     <div class="edu-card">
       <h3>B.S. in Computer Science</h3>
       <p class="school">Kathmandu University</p>
-      <p class="details">Aug 2013 &ndash; Oct 2017<br>Graduated top 5% of class</p>
+      <p class="details">Aug 2013 - Oct 2017<br>I graduated in the top 5% of my class</p>
     </div>
   </div>
 </section>
@@ -703,7 +646,7 @@ footer a:hover {
       </div>
     </div>
     <div class="skill-group">
-      <h4>Big Data &amp; Processing</h4>
+      <h4>Big Data & Processing</h4>
       <div class="skill-tags">
         <span class="skill-tag">Apache Spark</span>
         <span class="skill-tag">Hadoop</span>
@@ -737,7 +680,7 @@ footer a:hover {
       </div>
     </div>
     <div class="skill-group">
-      <h4>Orchestration &amp; DevOps</h4>
+      <h4>Orchestration & DevOps</h4>
       <div class="skill-tags">
         <span class="skill-tag">Apache Airflow</span>
         <span class="skill-tag">Terraform</span>
@@ -748,7 +691,7 @@ footer a:hover {
       </div>
     </div>
     <div class="skill-group">
-      <h4>Databases &amp; Visualization</h4>
+      <h4>Databases & Visualization</h4>
       <div class="skill-tags">
         <span class="skill-tag">PostgreSQL</span>
         <span class="skill-tag">MySQL</span>
@@ -764,37 +707,37 @@ footer a:hover {
   <div class="personal-grid">
 
     <div class="personal-card card-trek">
-      <span class="icon">&#9968;</span>
+      <div class="icon">&#9968;</div>
       <h4>Trekking</h4>
       <p>I love hitting the trails and have completed several high-altitude treks across Nepal. My journey so far includes crossing the Annapurna Circuit (5,416m) and reaching spots like Mardi Himal Base Camp (4,500m), Gosainkunda (4,380m), Annapurna Base Camp (4,130m), Langtang Valley (3,870m), and Shey Phoksundo Lake (3,611m).</p>
     </div>
 
     <div class="personal-card card-sports">
-      <span class="icon">&#9917;</span>
+      <div class="icon">&#9917;</div>
       <h4>Sports</h4>
-      <p>I'm a massive football (soccer) fan and a huge Arsenal FC supporter. I'm also a big Formula 1 enthusiast &mdash; Lewis Hamilton is my favorite driver.</p>
+      <p>I'm a massive football (soccer) fan and a huge Arsenal FC supporter. I'm also a big Formula 1 enthusiast, Lewis Hamilton is my favorite driver.</p>
     </div>
 
     <div class="personal-card card-photo">
-      <span class="icon">&#128247;</span>
+      <div class="icon">&#128247;</div>
       <h4>Photography</h4>
       <p>I'm starting to get into visual storytelling and photography. I'm mostly focusing on developing a technical eye for composition and light. <a href="https://www.instagram.com/shirishhhh" target="_blank" style="color:var(--accent);font-weight:600;">@shirishhhh</a></p>
     </div>
 
     <div class="personal-card card-running">
-      <span class="icon">&#127939;</span>
+      <div class="icon">&#127939;</div>
       <h4>Running</h4>
       <p>I'm currently trying my hand at distance running. I'm very much a beginner, just focusing on building up my endurance and trying to stay consistent.</p>
     </div>
 
     <div class="personal-card card-politics">
-      <span class="icon">&#127970;</span>
-      <h4>Political &amp; Social Research</h4>
+      <div class="icon">&#127970;</div>
+      <h4>Political & Social Research</h4>
       <p>I occasionally read up on different political systems and social structures, mostly out of personal curiosity about how things are organized behind the scenes.</p>
     </div>
 
     <div class="personal-card card-jyotish">
-      <span class="icon">&#9734;</span>
+      <div class="icon">&#9734;</div>
       <h4>Vedic Astrology</h4>
       <p>I spend some time studying classical Jyotish. I enjoy applying an analytical and systematic approach to it, exploring personality patterns and life cycles through this ancient framework.</p>
     </div>
@@ -803,53 +746,9 @@ footer a:hover {
 </section>
 
 <footer>
-  <p>&copy; 2026 Shirish Khanal &mdash;
-    <a href="mailto:khanalshirish@gmail.com">khanalshirish@gmail.com</a> &middot;
-    <a href="https://www.linkedin.com/in/shirish-khanal/" target="_blank">LinkedIn</a> &middot;
-    <a href="https://github.com/iamshirish" target="_blank">GitHub</a>
-  </p>
+  <p>&copy; 2026 Shirish Khanal</p>
 </footer>
-
-<script>
-(function () {
-  /* ─── SCROLL REVEAL (progressive enhancement) ─── */
-  const revealTargets = document.querySelectorAll(
-    '.research-card, .timeline-item, .edu-card, .project-item, .personal-card, .skill-group'
-  );
-
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  revealTargets.forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.setProperty('--reveal-delay', (i % 6 * 0.07) + 's');
-    revealObserver.observe(el);
-  });
-
-  /* ─── ACTIVE NAV ON SCROLL ─── */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  const navObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { rootMargin: '-15% 0px -75% 0px' });
-
-  sections.forEach(s => navObserver.observe(s));
-}());
-</script>
 
 </body>
 </html>
+```
