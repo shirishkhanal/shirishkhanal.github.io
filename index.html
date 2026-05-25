@@ -545,9 +545,9 @@ footer a:hover {
     </button>
     <ul class="nav-links">
       <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#personal">About</a></li>
     </ul>
@@ -849,6 +849,16 @@ footer a:hover {
   }, { rootMargin: '-15% 0px -75% 0px' });
 
   document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
+
+  /* ─── EQUAL PERSONAL CARD HEIGHTS ─── */
+  function equalizePersonalCards() {
+    const cards = document.querySelectorAll('.personal-card');
+    cards.forEach(c => c.style.minHeight = '');
+    const maxH = Math.max(...[...cards].map(c => c.offsetHeight));
+    cards.forEach(c => c.style.minHeight = maxH + 'px');
+  }
+  equalizePersonalCards();
+  window.addEventListener('resize', equalizePersonalCards);
 }());
 </script>
 
