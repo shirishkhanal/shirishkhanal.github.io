@@ -333,43 +333,11 @@ nav .nav-links a.active::after { transform: scaleX(1); }
   border-radius: 30px;
   z-index: -1;
 }
-.now-card {
-  position: relative;
-  margin: -72px -24px 0 -40px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 22px 24px;
-  box-shadow: var(--shadow-lift);
-}
-.now-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-.pulse {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 0 var(--accent-line);
-  animation: pulse 2.4s ease-out infinite;
-}
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--accent-line); }
   70% { box-shadow: 0 0 0 9px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
-.now-card dl { display: grid; gap: 8px; }
-.now-card dl div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: baseline; }
-.now-card dt { font-size: 0.82rem; color: var(--text-muted); }
-.now-card dd { font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.4; }
 
 /* ─── SECTIONS ─── */
 main { counter-reset: section; }
@@ -868,9 +836,8 @@ footer a:hover {
     gap: 14px;
   }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-aside { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: end; max-width: 620px; }
+  .hero-aside { max-width: 300px; }
   .hero-aside::before { display: none; }
-  .now-card { margin: 0; }
   .split { grid-template-columns: 1fr; gap: 0; }
   .project-item { grid-template-columns: 1fr; gap: 16px; }
   .research-grid { grid-template-columns: 1fr; }
@@ -878,7 +845,6 @@ footer a:hover {
   .personal-card.card-trek { grid-row: auto; }
 }
 @media (max-width: 560px) {
-  .hero-aside { grid-template-columns: 1fr; }
   .hero-photo { max-width: 240px; }
   .skills-grid, .personal-grid { grid-template-columns: 1fr; }
   .personal-card.card-trek { grid-column: auto; padding: 28px; }
@@ -890,7 +856,7 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .pulse, .timeline-item.is-current::before { animation: none; }
+  .timeline-item.is-current::before { animation: none; }
   .peak-bar::after { transform: scaleX(1); transition: none; }
 }
 </style>
@@ -941,14 +907,6 @@ footer a:hover {
     </div>
     <div class="hero-aside">
       <img src="Khanal_Shirish_5856b.jpg" alt="Shirish Khanal" class="hero-photo">
-      <aside class="now-card" aria-label="Currently">
-        <p class="now-label"><span class="pulse"></span>Currently</p>
-        <dl>
-          <div><dt>Studying</dt><dd>PhD, University of Rhode Island</dd></div>
-          <div><dt>Teaching</dt><dd>CSC 200 &middot; Python &amp; problem solving</dd></div>
-          <div><dt>Focus</dt><dd>Interpretable AI for health</dd></div>
-        </dl>
-      </aside>
     </div>
   </div>
 </header>
