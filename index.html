@@ -8,58 +8,94 @@
 <meta property="og:title" content="Shirish Khanal | Researcher & Data Engineer">
 <meta property="og:description" content="PhD student at URI and data engineer, researching interpretable AI and its applications in health AI.">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a6421c'/%3E%3Cpath d='M4 24 L12 11 L16.5 17.5 L20 13 L28 24 Z' fill='%23fffaf2'/%3E%3C/svg%3E">
 <script>
   (function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}());
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Source+Sans+3:ital,wght@0,300..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #faf9f6;
-  --bg-alt: #f0eeea;
-  --text: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b6b6b;
-  --accent: #8b2500;
-  --accent-light: #c44d2a;
-  --accent-faint: rgba(139,37,0,0.06);
-  --border: #d4d0c8;
-  --nav-bg: rgba(250,249,246,0.92);
-  --shadow-hover: rgba(139,37,0,0.07);
-  --timeline-glow: rgba(139,37,0,0.15);
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --bg: #f6efe4;
+  --bg-alt: #efe5d6;
+  --surface: #fffaf2;
+  --text: #2b1f16;
+  --text-secondary: #4d3e33;
+  --text-muted: #7b6a5b;
+  --accent: #a6421c;
+  --accent-strong: #873314;
+  --accent-soft: rgba(166,66,28,0.09);
+  --accent-line: rgba(166,66,28,0.30);
+  --on-accent: #fffaf2;
+  --border: #e4d6c3;
+  --nav-bg: rgba(246,239,228,0.86);
+  --contour: rgba(166,66,28,0.20);
+  --shadow: 0 1px 2px rgba(92,52,24,0.05), 0 12px 32px -16px rgba(92,52,24,0.22);
+  --shadow-lift: 0 2px 6px rgba(92,52,24,0.07), 0 24px 48px -20px rgba(120,58,22,0.34);
+  --grain-opacity: 0.45;
+  --serif: 'Fraunces', Georgia, serif;
   --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-  --max-width: 960px;
-  --nav-height: 56px;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --max-width: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --nav-height: 68px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  --z-nav: 100;
+  --z-grain: 200;
 }
 
 [data-theme="dark"] {
-  --bg: #09090b;
-  --bg-alt: #18181b;
-  --text: #ffffff;
-  --text-secondary: #f0f0f0;
-  --text-muted: #c8c8d0;
-  --accent: #d97706;
-  --accent-light: #f59e0b;
-  --accent-faint: rgba(217,119,6,0.08);
-  --border: #27272a;
-  --nav-bg: rgba(9,9,11,0.92);
-  --shadow-hover: rgba(217,119,6,0.10);
-  --timeline-glow: rgba(217,119,6,0.25);
+  --bg: #16110d;
+  --bg-alt: #201812;
+  --surface: #211913;
+  --text: #f6ede2;
+  --text-secondary: #e3d6c7;
+  --text-muted: #b3a291;
+  --accent: #ec8f62;
+  --accent-strong: #f5ab86;
+  --accent-soft: rgba(236,143,98,0.11);
+  --accent-line: rgba(236,143,98,0.34);
+  --on-accent: #1d140e;
+  --border: #3a2d23;
+  --nav-bg: rgba(22,17,13,0.86);
+  --contour: rgba(236,143,98,0.24);
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.65);
+  --shadow-lift: 0 2px 6px rgba(0,0,0,0.35), 0 24px 48px -20px rgba(0,0,0,0.75);
+  --grain-opacity: 0.25;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { font-size: 17px; scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
+html { font-size: 18px; scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
 
 body {
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: calc(var(--z-nav) + 1);
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
 
 /* Grain overlay */
 body::after {
@@ -67,10 +103,10 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: var(--z-grain);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
   background-size: 200px 200px;
-  opacity: 0.45;
+  opacity: var(--grain-opacity);
 }
 
 /* ─── THEME TRANSITION ─── */
@@ -82,16 +118,16 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 .theme-toggle {
   background: none;
   border: 1.5px solid var(--border);
-  border-radius: 6px;
-  width: 34px;
-  height: 34px;
+  border-radius: 10px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--text-muted);
   flex-shrink: 0;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, transform 0.15s;
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .theme-toggle:active { transform: scale(0.94); }
@@ -103,72 +139,76 @@ html.theme-switching *, html.theme-switching *::before, html.theme-switching *::
 /* ─── SCROLL REVEAL ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s ease var(--reveal-delay, 0s), transform 0.55s ease var(--reveal-delay, 0s);
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0s), transform 0.6s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0s);
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: none; }
 
 /* ─── NAV ─── */
 nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-nav);
   background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid var(--border);
   height: var(--nav-height);
 }
 nav .nav-inner {
-  max-width: var(--max-width);
+  width: min(var(--max-width), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 0 24px;
   display: flex;
   align-items: center;
   height: 100%;
   gap: 32px;
 }
 nav .nav-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--text);
   text-decoration: none;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   flex-shrink: 0;
 }
+.nav-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.nav-mark rect { fill: var(--accent); }
+.nav-mark path { fill: var(--on-accent); }
 nav .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   list-style: none;
   margin-left: auto;
 }
 nav .nav-links a {
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  letter-spacing: 0.02em;
   transition: color 0.2s;
   position: relative;
 }
 nav .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--accent);
-  transition: width 0.25s;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
 }
 nav .nav-links a:hover,
 nav .nav-links a.active { color: var(--accent); }
 nav .nav-links a:hover::after,
-nav .nav-links a.active::after { width: 100%; }
+nav .nav-links a.active::after { transform: scaleX(1); }
 
 .hamburger {
   display: none;
@@ -188,47 +228,71 @@ nav .nav-links a.active::after { width: 100%; }
 
 /* ─── HERO ─── */
 .hero {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 72px 24px 56px;
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 52px;
-  align-items: start;
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(48px, 7vw, 96px) clamp(64px, 8vw, 112px);
 }
-.hero-photo {
-  width: 180px;
-  height: 220px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 6px;
-  border: 3px solid var(--border);
-  filter: grayscale(20%);
+.hero-contours {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--contour);
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 70% 90% at 72% 38%, #000 20%, transparent 78%);
+          mask-image: radial-gradient(ellipse 70% 90% at 72% 38%, #000 20%, transparent 78%);
+}
+.hero-inner {
+  position: relative;
+  width: min(var(--max-width), 100% - 2 * var(--gutter));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1.5px;
+  background: var(--accent);
 }
 .hero-content h1 {
   font-family: var(--serif);
-  font-size: 3.4rem;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
   color: var(--text);
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   text-wrap: balance;
 }
+.hero-content h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
 .hero-content .subtitle {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   font-style: italic;
   font-weight: 400;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 .hero-content .bio {
-  font-size: 1rem;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
   color: var(--text-secondary);
-  max-width: 600px;
-  margin-bottom: 24px;
-  line-height: 1.78;
+  max-width: 62ch;
+  margin-bottom: 34px;
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 .hero-links {
   display: flex;
@@ -236,244 +300,408 @@ nav .nav-links a.active::after { width: 100%; }
   flex-wrap: wrap;
 }
 .hero-links a {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  letter-spacing: 0.04em;
-  padding: 7px 18px;
-  border: 1.5px solid var(--accent);
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s, transform 0.15s;
+  padding: 11px 24px;
+  border: 1.5px solid var(--accent-line);
+  border-radius: 999px;
+  background: var(--surface);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
 }
-.hero-links a:hover { background: var(--accent); color: #fff; }
-.hero-links a:active { transform: scale(0.97); }
+.hero-links a:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.hero-links a.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.hero-links a.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+.hero-links a:active { transform: translateY(0) scale(0.98); }
+
+.hero-aside { position: relative; }
+.hero-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 4.6;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 28px;
+  box-shadow: var(--shadow-lift);
+}
+.hero-aside::before {
+  content: '';
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1.5px solid var(--accent-line);
+  border-radius: 30px;
+  z-index: -1;
+}
+.now-card {
+  position: relative;
+  margin: -72px -24px 0 -40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-lift);
+}
+.now-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent-line);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--accent-line); }
+  70% { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.now-card dl { display: grid; gap: 8px; }
+.now-card dl div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: baseline; }
+.now-card dt { font-size: 0.82rem; color: var(--text-muted); }
+.now-card dd { font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.4; }
 
 /* ─── SECTIONS ─── */
+main { counter-reset: section; }
 .section {
-  max-width: var(--max-width);
+  width: min(var(--max-width), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 56px 24px;
+  padding-block: clamp(56px, 7vw, 96px) clamp(64px, 8vw, 104px);
+  counter-increment: section;
 }
-.section + .section { border-top: 1px solid var(--border); }
 .section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
   font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.1;
   color: var(--text);
-  margin-bottom: 36px;
-  position: relative;
-  padding-bottom: 12px;
-  letter-spacing: -0.01em;
+  margin-bottom: clamp(32px, 4vw, 52px);
+  letter-spacing: -0.025em;
+}
+.section-title::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  transform: translateY(-0.5em);
 }
 .section-title::after {
   content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  transform: translateY(-0.3em);
+  min-width: 40px;
 }
 
 /* ─── RESEARCH ─── */
 .research-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 64px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   counter-reset: research-counter;
 }
 .research-card {
-  padding: 28px 0 28px 52px;
-  border-top: 1px solid var(--border);
-  counter-increment: research-counter;
   position: relative;
-  background: none;
-  border-radius: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 34px 36px 38px;
+  box-shadow: var(--shadow);
+  counter-increment: research-counter;
+  transition: transform 0.3s cubic-bezier(.2,.7,.2,1), box-shadow 0.3s, border-color 0.3s;
 }
 .research-card::before {
   content: counter(research-counter, decimal-leading-zero);
   position: absolute;
-  left: 0;
-  top: 30px;
-  font-family: var(--mono);
-  font-size: 0.72rem;
+  top: 26px;
+  right: 32px;
+  font-family: var(--serif);
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 1;
   color: var(--accent);
-  opacity: 0.6;
-  letter-spacing: 0.04em;
+  opacity: 0.18;
 }
+.research-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), var(--accent-soft), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.research-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--accent-line); }
+.research-card:hover::after { opacity: 1; }
+.research-card > * { position: relative; z-index: 1; }
+.research-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.research-icon svg { width: 28px; height: 28px; }
 .research-card h3 {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
   color: var(--text);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .research-card p {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.72;
+  max-width: 54ch;
 }
 
-/* ─── EXPERIENCE TIMELINE ─── */
-.timeline { position: relative; padding-left: 28px; }
+/* ─── RESEARCH EXPERIENCE / PROJECTS ─── */
+.project-item {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  padding-block: 36px;
+  border-top: 1px solid var(--border);
+}
+.project-item:last-child { border-bottom: 1px solid var(--border); }
+.project-item h3 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.project-item:hover h3 { color: var(--accent); }
+.project-item .proj-meta {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 5px 11px;
+  border-radius: 6px;
+}
+.project-item p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 72ch;
+}
+.project-item p a {
+  color: var(--accent);
+  text-decoration-color: var(--accent-line);
+  text-underline-offset: 3px;
+}
+.project-item p a:hover { text-decoration-color: var(--accent); }
+
+/* ─── EXPERIENCE + TEACHING SPLIT ─── */
+.split {
+  width: min(var(--max-width), 100% - 2 * var(--gutter));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 80px);
+}
+.split > .section { width: auto; margin: 0; }
+.split .section-title { font-size: clamp(1.8rem, 2.6vw, 2.3rem); }
+
+/* ─── TIMELINE ─── */
+.timeline { position: relative; padding-left: 32px; }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 5px;
-  top: 8px;
-  bottom: 8px;
+  left: 6px;
+  top: 10px;
+  bottom: 10px;
   width: 1.5px;
-  background: var(--border);
+  background: linear-gradient(var(--accent-line), var(--border) 40%);
 }
 .timeline-item {
   position: relative;
   margin-bottom: 36px;
 }
+.timeline-item:last-child { margin-bottom: 0; }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -28px;
+  left: -32px;
   top: 8px;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
+  background: var(--bg);
+  border: 2.5px solid var(--accent);
+}
+.timeline-item.is-current::before {
   background: var(--accent);
-  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--timeline-glow);
+  animation: pulse 2.4s ease-out infinite;
 }
 .timeline-item h3 {
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  line-height: 1.35;
   color: var(--text);
 }
 .timeline-item .meta {
-  font-size: 0.88rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 8px;
-  font-style: italic;
+  margin: 6px 0 10px;
 }
-.timeline-item p, .timeline-item ul {
-  font-size: 0.97rem;
+.timeline-item p {
+  font-size: 1.02rem;
   color: var(--text-secondary);
   line-height: 1.72;
 }
-.timeline-item ul { padding-left: 18px; margin-top: 6px; }
-.timeline-item li { margin-bottom: 4px; }
 
 /* ─── EDUCATION ─── */
 .edu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 .edu-card {
-  border-left: 2px solid var(--border);
-  padding: 20px 22px;
-  background: none;
-  border-radius: 0;
-  transition: border-color 0.2s;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 30px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s cubic-bezier(.2,.7,.2,1), box-shadow 0.3s, border-color 0.3s;
 }
-.edu-card:hover { border-left-color: var(--accent); }
+.edu-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.edu-card.is-current { border-color: var(--accent-line); }
+.edu-card.is-current::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: var(--accent);
+}
+.edu-card .badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 3px 9px;
+  border-radius: 5px;
+  margin-bottom: 14px;
+}
 .edu-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 8px;
   color: var(--text);
 }
 .edu-card .school {
-  font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--accent);
 }
 .edu-card .details {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 10px;
   line-height: 1.6;
 }
 
 /* ─── SKILLS ─── */
+/* Groups 1–4 (ML / data science) fill the left two columns; 5–6 (data engineering) stack on the right. */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.skill-group:nth-child(5) { grid-column: 3; grid-row: 1; margin-left: 16px; }
+.skill-group:nth-child(6) { grid-column: 3; grid-row: 2; margin-left: 16px; }
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 26px 26px 28px;
 }
 .skill-group h4 {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 16px;
 }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-tag {
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  padding: 5px 11px;
-  border-radius: 3px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
   color: var(--text-secondary);
-  transition: all 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
   cursor: default;
 }
 .skill-tag:hover {
-  background: var(--accent-faint);
-  border-color: rgba(139,37,0,0.25);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
   color: var(--accent);
-}
-
-/* ─── RESEARCH EXPERIENCE / PROJECTS ─── */
-.project-item {
-  margin-bottom: 28px;
-  padding: 20px 0 20px 24px;
-  border-left: 2px solid var(--border);
-  background: none;
-  border-radius: 0;
-  transition: border-color 0.2s;
-}
-.project-item:hover { border-left-color: var(--accent); }
-.project-item h3 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.project-item .proj-meta {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: 10px;
-}
-.project-item p {
-  font-size: 0.97rem;
-  color: var(--text-secondary);
-  line-height: 1.78;
 }
 
 /* ─── PERSONAL ─── */
 .personal-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 .personal-card {
-  padding: 24px;
-  background: var(--bg-alt);
+  padding: 28px;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s cubic-bezier(.2,.7,.2,1), box-shadow 0.3s;
 }
 .personal-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--shadow-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
 }
+.personal-card.card-trek { grid-column: span 2; grid-row: span 2; padding: 34px 36px; }
 .personal-card::before {
   content: '';
   position: absolute;
@@ -485,8 +713,11 @@ nav .nav-links a.active::after { width: 100%; }
 }
 .personal-card > * { position: relative; z-index: 1; }
 .personal-card.card-trek::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cpolygon points='0,120 40,40 80,80 120,20 160,60 200,10 200,120' fill='%234a6741'/%3E%3Cpolygon points='0,120 30,70 70,90 110,50 150,75 200,30 200,120' fill='%235a7a50'/%3E%3Cpolygon points='0,120 50,90 100,100 150,85 200,95 200,120' fill='%236b8c60'/%3E%3C/svg%3E");
-  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120' preserveAspectRatio='none'%3E%3Cpolygon points='0,120 40,40 80,80 120,20 160,60 200,10 200,120' fill='%234a6741'/%3E%3Cpolygon points='0,120 30,70 70,90 110,50 150,75 200,30 200,120' fill='%235a7a50'/%3E%3Cpolygon points='0,120 50,90 100,100 150,85 200,95 200,120' fill='%236b8c60'/%3E%3C/svg%3E");
+  background-size: 100% 45%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  opacity: 0.10;
 }
 .personal-card.card-sports::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='%23333' stroke-width='3'/%3E%3Cpath d='M100 20 L100 180 M20 100 L180 100 M35 35 L165 165 M165 35 L35 165' stroke='%23333' stroke-width='1.5' opacity='0.5'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
@@ -509,32 +740,97 @@ nav .nav-links a.active::after { width: 100%; }
   opacity: 0.09;
 }
 .personal-card .icon {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  margin-bottom: 16px;
 }
 .personal-card h4 {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   margin-bottom: 8px;
   color: var(--text);
 }
+.card-trek h4 { font-size: 1.6rem; }
 .personal-card p {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+}
+.inline-link { color: var(--accent); font-weight: 600; }
+
+/* Trek elevation chart */
+.peaks {
+  list-style: none;
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+}
+.peaks li {
+  display: grid;
+  grid-template-columns: minmax(0, 190px) minmax(0, 1fr) 72px;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+.peak-name { color: var(--text); font-weight: 600; }
+.peak-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+.peak-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: calc(var(--alt) / 5416 * 100%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent-line), var(--accent));
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(.2,.7,.2,1) var(--bar-delay, 0s);
+}
+.card-trek.visible .peak-bar::after,
+.card-trek:not(.reveal) .peak-bar::after { transform: scaleX(1); }
+.peak-alt {
+  font-family: var(--mono);
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.65;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ─── FOOTER ─── */
 footer {
-  border-top: 1px solid var(--border);
-  max-width: var(--max-width);
+  width: min(var(--max-width), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 36px 24px;
-  text-align: center;
-  font-size: 0.88rem;
+  border-top: 1px solid var(--border);
+  padding: 40px 0 48px;
+  font-size: 0.95rem;
   color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
+footer .foot-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+footer .foot-name .nav-mark { width: 24px; height: 24px; }
 footer a {
   color: var(--text-muted);
   text-decoration: none;
@@ -548,23 +844,17 @@ footer a:hover {
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .personal-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 1080px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr) 320px; }
+  .project-item { grid-template-columns: minmax(0, 280px) minmax(0, 1fr); }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-group:nth-child(5), .skill-group:nth-child(6) { grid-column: auto; grid-row: auto; margin-left: 0; }
 }
-@media (max-width: 700px) {
+@media (max-width: 860px) {
+  html { font-size: 17px; }
   .theme-toggle { margin-left: auto; }
-  .hamburger { margin-left: 8px; }
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 40px 20px 32px;
-    text-align: center;
-  }
-  .hero-photo { margin: 0 auto; width: 150px; height: 185px; }
-  .hero-content h1 { font-size: 2.6rem; }
-  .hero-links { justify-content: center; }
   nav .nav-links { display: none; }
-  .hamburger { display: block; }
+  .hamburger { display: block; margin-left: 8px; }
   nav.open .nav-links {
     display: flex;
     flex-direction: column;
@@ -574,21 +864,47 @@ footer a:hover {
     right: 0;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
-    gap: 12px;
+    padding: 18px var(--gutter);
+    gap: 14px;
   }
-  .section { padding: 40px 20px; }
-  .section-title { font-size: 1.65rem; }
-  .research-grid { grid-template-columns: 1fr; gap: 0; }
-  .personal-grid { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-aside { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: end; max-width: 620px; }
+  .hero-aside::before { display: none; }
+  .now-card { margin: 0; }
+  .split { grid-template-columns: 1fr; gap: 0; }
+  .project-item { grid-template-columns: 1fr; gap: 16px; }
+  .research-grid { grid-template-columns: 1fr; }
+  .personal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .personal-card.card-trek { grid-row: auto; }
+}
+@media (max-width: 560px) {
+  .hero-aside { grid-template-columns: 1fr; }
+  .hero-photo { max-width: 240px; }
+  .skills-grid, .personal-grid { grid-template-columns: 1fr; }
+  .personal-card.card-trek { grid-column: auto; padding: 28px; }
+  .research-card { padding: 28px 26px 30px; }
+  .peaks li { grid-template-columns: minmax(0, 1fr) 64px; }
+  .peak-bar { grid-column: 1 / -1; grid-row: 2; }
+  .section-title::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .pulse, .timeline-item.is-current::before { animation: none; }
+  .peak-bar::after { transform: scaleX(1); transition: none; }
 }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav id="top">
   <div class="nav-inner">
-    <a href="#top" class="nav-name">Shirish Khanal</a>
+    <a href="#top" class="nav-name">
+      <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M4 24 L12 11 L16.5 17.5 L20 13 L28 24 Z"/></svg>
+      Shirish Khanal
+    </a>
     <ul class="nav-links">
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -608,36 +924,57 @@ footer a:hover {
 </nav>
 
 <header class="hero">
-  <img src="Khanal_Shirish_5856b.jpg" alt="Shirish Khanal" class="hero-photo">
-  <div class="hero-content">
-    <h1>Shirish Khanal</h1>
-    <p class="subtitle">PhD Student &middot; Researcher &middot; Data Engineer</p>
-    <p class="bio">
-      I am a PhD student in Computer and Statistical Sciences at the University of Rhode Island, researching interpretable AI and its applications in health AI, with six years of industry experience in scalable data architecture and machine learning. My research interests also span causal reasoning, algorithmic fairness, and trustworthy machine learning.
-    </p>
-    <div class="hero-links">
-      <a href="mailto:khanalshirish@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/shirish-khanal/" target="_blank">LinkedIn</a>
+  <svg class="hero-contours" id="heroContours" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Namaste, I'm</p>
+      <h1>Shirish <em>Khanal</em></h1>
+      <p class="subtitle">PhD Student &middot; Researcher &middot; Data Engineer</p>
+      <p class="bio">
+        I am a PhD student in Computer and Statistical Sciences at the University of Rhode Island, researching interpretable AI and its applications in health AI, with six years of industry experience in scalable data architecture and machine learning. My research interests also span causal reasoning, algorithmic fairness, and trustworthy machine learning.
+      </p>
+      <div class="hero-links">
+        <a class="primary" href="mailto:khanalshirish@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/shirish-khanal/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/iamshirish" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <img src="Khanal_Shirish_5856b.jpg" alt="Shirish Khanal" class="hero-photo">
+      <aside class="now-card" aria-label="Currently">
+        <p class="now-label"><span class="pulse"></span>Currently</p>
+        <dl>
+          <div><dt>Studying</dt><dd>PhD, University of Rhode Island</dd></div>
+          <div><dt>Teaching</dt><dd>CSC 200 &middot; Python &amp; problem solving</dd></div>
+          <div><dt>Focus</dt><dd>Interpretable AI for health</dd></div>
+        </dl>
+      </aside>
     </div>
   </div>
 </header>
+
+<main id="main">
 
 <section class="section" id="research">
   <h2 class="section-title">Research Interests</h2>
   <div class="research-grid">
     <div class="research-card">
+      <div class="research-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21"/><circle cx="10.5" cy="8" r="1.1"/><circle cx="8.2" cy="12.4" r="1.1"/><circle cx="12.8" cy="12.4" r="1.1"/><path d="M10 9.1 8.7 11.4M11 9.1l1.3 2.3"/></svg></div>
       <h3>Interpretable AI</h3>
       <p>Designing models that are interpretable by construction rather than explained after the fact, so their reasoning can be audited and contested wherever decisions carry real consequences.</p>
     </div>
     <div class="research-card">
+      <div class="research-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="12" height="12" rx="2"/><rect x="5.5" y="5.5" width="5" height="5" rx="1" fill="currentColor" fill-opacity="0.25"/><path d="M11.5 11.5 15.8 15.8" stroke-dasharray="1.6 1.8"/><rect x="15.5" y="15.5" width="6" height="6" rx="1.2" fill="currentColor" fill-opacity="0.25"/></svg></div>
       <h3>Prototype Based Models</h3>
       <p>Advancing prototypical-part networks that reason by comparison to learned cases, including methods to audit and edit their prototypes without retraining or sacrificing accuracy.</p>
     </div>
     <div class="research-card">
+      <div class="research-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M5.5 12h3l1.6-3.6 3 7.2 1.8-3.6h3.6"/></svg></div>
       <h3>Medical and Health AI</h3>
       <p>Applying interpretable machine learning to clinical decision support, medical imaging, and disease phenotyping, turning noisy clinical data into evidence a physician can act on.</p>
     </div>
     <div class="research-card">
+      <div class="research-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18.5" r="2.2"/><path d="M7.3 6h9.2M14.6 4.2 16.6 6l-2 1.8M6.2 8 10.7 16.4M17.8 8 13.3 16.4"/></svg></div>
       <h3>Causal Representation Learning</h3>
       <p>Building models that capture true cause-and-effect relationships rather than mere correlations to distinguish genuine predictive signals from retrospective labels.</p>
     </div>
@@ -648,30 +985,39 @@ footer a:hover {
   <h2 class="section-title">Research Experience</h2>
 
   <div class="project-item">
-    <h3>Computational Healthcare Analytics &amp; Predictive Modeling</h3>
-    <p class="proj-meta">Master's Capstone, East Tennessee State University, 2022&ndash;2023</p>
-    <p>I developed an end-to-end predictive analytics pipeline using HCUP inpatient datasets to forecast hospital readmissions and mortality. Over the course of the project, I trained and evaluated sixteen different machine learning and neural network models using metrics like AUC, ROC, precision, and recall. A major insight came while conducting an error analysis on the mortality model. I discovered target leakage was artificially boosting its accuracy by using billing codes generated after a patient's death. This experience deeply shaped my research philosophy, highlighting the fundamental limitation of models that optimize for accuracy without the causal reasoning needed to separate genuine predictive signals from retrospective labels. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/healthcare-predictive-modeling" target="_blank" style="color:var(--accent)">GitHub repository</a>)</em>.</p>
+    <div class="project-head">
+      <h3>Computational Healthcare Analytics &amp; Predictive Modeling</h3>
+      <p class="proj-meta">Master's Capstone, East Tennessee State University, 2022&ndash;2023</p>
+    </div>
+    <p>I developed an end-to-end predictive analytics pipeline using HCUP inpatient datasets to forecast hospital readmissions and mortality. Over the course of the project, I trained and evaluated sixteen different machine learning and neural network models using metrics like AUC, ROC, precision, and recall. A major insight came while conducting an error analysis on the mortality model. I discovered target leakage was artificially boosting its accuracy by using billing codes generated after a patient's death. This experience deeply shaped my research philosophy, highlighting the fundamental limitation of models that optimize for accuracy without the causal reasoning needed to separate genuine predictive signals from retrospective labels. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/healthcare-predictive-modeling" target="_blank">GitHub repository</a>)</em>.</p>
   </div>
 
   <div class="project-item">
-    <h3>Disease Phenotyping from Biomedical Text</h3>
-    <p class="proj-meta">ETSU, 2022</p>
-    <p>In this project, I built a disease diagnosis classification system by mining biomedical literature. I extracted over 40,000 symptom-related clinical abstracts directly from PubMed. After implementing thorough NLP preprocessing, I trained and compared six different classifiers, ranging from traditional algorithms to deep learning models like CNNs and Bidirectional RNNs. Interestingly, I found that a Linear Support Vector Machine (SVM) outperformed the complex neural networks, achieving over 93% accuracy. This work proved to me that on sparse, high-dimensional feature spaces typical of medical text, simpler and more interpretable algorithms can often be far more effective and reliable than black-box deep learning approaches. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/disease-phenotype" target="_blank" style="color:var(--accent)">GitHub repository</a>)</em>.</p>
+    <div class="project-head">
+      <h3>Disease Phenotyping from Biomedical Text</h3>
+      <p class="proj-meta">ETSU, 2022</p>
+    </div>
+    <p>In this project, I built a disease diagnosis classification system by mining biomedical literature. I extracted over 40,000 symptom-related clinical abstracts directly from PubMed. After implementing thorough NLP preprocessing, I trained and compared six different classifiers, ranging from traditional algorithms to deep learning models like CNNs and Bidirectional RNNs. Interestingly, I found that a Linear Support Vector Machine (SVM) outperformed the complex neural networks, achieving over 93% accuracy. This work proved to me that on sparse, high-dimensional feature spaces typical of medical text, simpler and more interpretable algorithms can often be far more effective and reliable than black-box deep learning approaches. <em>(You can view the code for this project on my <a href="https://github.com/iamshirish/disease-phenotype" target="_blank">GitHub repository</a>)</em>.</p>
   </div>
 
   <div class="project-item">
-    <h3>Sports Analytics with Sentiment-Enhanced ML</h3>
-    <p class="proj-meta">ETSU, 2022</p>
+    <div class="project-head">
+      <h3>Sports Analytics with Sentiment-Enhanced ML</h3>
+      <p class="proj-meta">ETSU, 2022</p>
+    </div>
     <p>I led a project to predict player performance in the Fantasy Premier League by combining traditional statistics with public sentiment. Using the Twitter API, I collected a dataset of over 91,000 social media posts discussing specific players and teams. I explored different natural language processing techniques and found that a transformer-based roBERTa model was much better at understanding Twitter-specific jargon but significantly more computationally intensive. By integrating these sentiment-derived signals with standard time-series performance data, I was able to improve the overall prediction accuracy of models like LSTMs. This project was a great exercise in multi-modal feature integration, showing how qualitative public sentiment can be quantified to enhance predictive algorithms.</p>
   </div>
 
   <div class="project-item">
-    <h3>GenAI-Powered RAG Systems</h3>
-    <p class="proj-meta">Deutsche Bank, 2024&ndash;2025</p>
+    <div class="project-head">
+      <h3>GenAI-Powered RAG Systems</h3>
+      <p class="proj-meta">Deutsche Bank, 2024&ndash;2025</p>
+    </div>
     <p>I designed GenAI solutions using Google Gemini, implementing RAG pipelines with embeddings and vector search. I enabled LLM-driven text classification and contextual inference for production data pipelines.</p>
   </div>
 </section>
 
+<div class="split">
 <section class="section" id="experience">
   <h2 class="section-title">Professional Experience</h2>
   <div class="timeline">
@@ -701,7 +1047,7 @@ footer a:hover {
   <h2 class="section-title">Teaching &amp; Service</h2>
   <div class="timeline">
 
-    <div class="timeline-item">
+    <div class="timeline-item is-current">
       <h3>Graduate Teaching Assistant, Computer Science</h3>
       <p class="meta">University of Rhode Island &middot; Aug 2026 &ndash; Present</p>
       <p>I teach CSC 200: Computer Problem Solving for Science and Engineering, guiding students through problem-solving methods and Python programming for scientific and engineering applications.</p>
@@ -721,11 +1067,13 @@ footer a:hover {
 
   </div>
 </section>
+</div>
 
 <section class="section" id="education">
   <h2 class="section-title">Education</h2>
   <div class="edu-grid">
-    <div class="edu-card">
+    <div class="edu-card is-current">
+      <span class="badge">Current</span>
       <h3>PhD in Computer Science</h3>
       <p class="school">University of Rhode Island</p>
       <p class="details">Computer and Statistical Sciences<br>Aug 2026 &ndash; Present</p>
@@ -817,7 +1165,15 @@ footer a:hover {
     <div class="personal-card card-trek">
       <span class="icon">&#9968;</span>
       <h4>Trekking</h4>
-      <p>I love hitting the trails and have completed several high-altitude treks across Nepal. My journey so far includes crossing the Annapurna Circuit (5,416m) and reaching spots like Mardi Himal Base Camp (4,500m), Gosainkunda (4,380m), Annapurna Base Camp (4,130m), Langtang Valley (3,870m), and Shey Phoksundo Lake (3,611m).</p>
+      <p>I love hitting the trails and have completed several high-altitude treks across Nepal. My journey so far includes:</p>
+      <ul class="peaks" aria-label="High-altitude treks by elevation">
+        <li style="--alt:5416;--bar-delay:0.05s"><span class="peak-name">Annapurna Circuit</span><span class="peak-bar"></span><span class="peak-alt">5,416m</span></li>
+        <li style="--alt:4500;--bar-delay:0.12s"><span class="peak-name">Mardi Himal Base Camp</span><span class="peak-bar"></span><span class="peak-alt">4,500m</span></li>
+        <li style="--alt:4380;--bar-delay:0.19s"><span class="peak-name">Gosainkunda</span><span class="peak-bar"></span><span class="peak-alt">4,380m</span></li>
+        <li style="--alt:4130;--bar-delay:0.26s"><span class="peak-name">Annapurna Base Camp</span><span class="peak-bar"></span><span class="peak-alt">4,130m</span></li>
+        <li style="--alt:3870;--bar-delay:0.33s"><span class="peak-name">Langtang Valley</span><span class="peak-bar"></span><span class="peak-alt">3,870m</span></li>
+        <li style="--alt:3611;--bar-delay:0.40s"><span class="peak-name">Shey Phoksundo Lake</span><span class="peak-bar"></span><span class="peak-alt">3,611m</span></li>
+      </ul>
     </div>
 
     <div class="personal-card card-sports">
@@ -829,7 +1185,7 @@ footer a:hover {
     <div class="personal-card card-photo">
       <span class="icon">&#128247;</span>
       <h4>Photography</h4>
-      <p>I'm starting to get into visual storytelling and photography. I'm mostly focusing on developing a technical eye for composition and light. <a href="https://www.instagram.com/shirishhhh" target="_blank" style="color:var(--accent);font-weight:600;">@shirishhhh</a></p>
+      <p>I'm starting to get into visual storytelling and photography. I'm mostly focusing on developing a technical eye for composition and light. <a class="inline-link" href="https://www.instagram.com/shirishhhh" target="_blank">@shirishhhh</a></p>
     </div>
 
     <div class="personal-card card-running">
@@ -853,8 +1209,14 @@ footer a:hover {
   </div>
 </section>
 
+</main>
+
 <footer>
-  <p>&copy; 2026 Shirish Khanal &mdash;
+  <p class="foot-name">
+    <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M4 24 L12 11 L16.5 17.5 L20 13 L28 24 Z"/></svg>
+    &copy; 2026 Shirish Khanal
+  </p>
+  <p>
     <a href="mailto:khanalshirish@gmail.com">khanalshirish@gmail.com</a> &middot;
     <a href="https://www.linkedin.com/in/shirish-khanal/" target="_blank">LinkedIn</a> &middot;
     <a href="https://github.com/iamshirish" target="_blank">GitHub</a>
@@ -872,6 +1234,51 @@ footer a:hover {
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     setTimeout(function () { html.classList.remove('theme-switching'); }, 320);
+  });
+
+  /* ─── HERO CONTOURS (topographic lines, drawn once) ─── */
+  function smoothClosed(pts) {
+    var n = pts.length, f = function (v) { return v.toFixed(1); };
+    var d = 'M' + f(pts[0][0]) + ',' + f(pts[0][1]);
+    for (var i = 0; i < n; i++) {
+      var p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+      d += 'C' + f(p1[0] + (p2[0] - p0[0]) / 6) + ',' + f(p1[1] + (p2[1] - p0[1]) / 6) + ' ' +
+           f(p2[0] - (p3[0] - p1[0]) / 6) + ',' + f(p2[1] - (p3[1] - p1[1]) / 6) + ' ' +
+           f(p2[0]) + ',' + f(p2[1]);
+    }
+    return d + 'Z';
+  }
+  var svg = document.getElementById('heroContours');
+  if (svg) {
+    var peaks = [
+      { x: 1060, y: 230, levels: 12, base: 22, step: 34, seed: 0.4 },
+      { x: 1380, y: 640, levels: 6, base: 18, step: 30, seed: 2.1 },
+      { x: 520, y: 760, levels: 5, base: 24, step: 34, seed: 4.2 }
+    ];
+    var thin = '', thick = '';
+    peaks.forEach(function (p) {
+      for (var k = 0; k < p.levels; k++) {
+        var r = p.base + k * p.step, pts = [];
+        for (var i = 0; i < 40; i++) {
+          var t = i / 40 * Math.PI * 2;
+          var w = 1 + 0.11 * Math.sin(3 * t + p.seed + k * 0.35) + 0.06 * Math.sin(5 * t - p.seed * 1.7 + k * 0.2) + 0.025 * Math.sin(9 * t + k);
+          pts.push([p.x + Math.cos(t) * r * w * 1.3, p.y + Math.sin(t) * r * w]);
+        }
+        if (k % 4 === 3) thick += smoothClosed(pts); else thin += smoothClosed(pts);
+      }
+    });
+    svg.innerHTML =
+      '<path d="' + thin + '" fill="none" stroke="currentColor" stroke-width="1"/>' +
+      '<path d="' + thick + '" fill="none" stroke="currentColor" stroke-width="1.8"/>';
+  }
+
+  /* ─── RESEARCH CARD SPOTLIGHT ─── */
+  document.querySelectorAll('.research-card').forEach(function (card) {
+    card.addEventListener('pointermove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
   });
 
   /* ─── SCROLL REVEAL (progressive enhancement) ─── */
@@ -906,16 +1313,6 @@ footer a:hover {
   }, { rootMargin: '-15% 0px -75% 0px' });
 
   document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
-
-  /* ─── EQUAL PERSONAL CARD HEIGHTS ─── */
-  function equalizePersonalCards() {
-    const cards = document.querySelectorAll('.personal-card');
-    cards.forEach(c => c.style.minHeight = '');
-    const maxH = Math.max(...[...cards].map(c => c.offsetHeight));
-    cards.forEach(c => c.style.minHeight = maxH + 'px');
-  }
-  equalizePersonalCards();
-  window.addEventListener('resize', equalizePersonalCards);
 }());
 </script>
 
