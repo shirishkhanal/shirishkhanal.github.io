@@ -9,7 +9,7 @@ This repository contains the source code for my personal website, a minimalist a
 The site is designed with a focus on academic clarity, professional experience, and technical expertise in scalable data architecture and trustworthy machine learning.
 
 ## 🚀 Live Demo
-You can view the live website at: **[iamshirish.github.io](https://iamshirish.github.io/)**
+You can view the live website at: **[shirishkhanal.github.io](https://shirishkhanal.github.io/)**
 
 ## 🛠️ Built With
 * **HTML5:** Semantic structure for optimal accessibility and SEO.
@@ -35,14 +35,14 @@ You can view the live website at: **[iamshirish.github.io](https://iamshirish.gi
 To view the site locally, simply clone the repository and open the `index.html` file in any modern web browser:
 
 ```bash
-git clone https://github.com/iamshirish/iamshirish.github.io.git
-cd iamshirish.github.io
+git clone https://github.com/shirishkhanal/shirishkhanal.github.io.git
+cd shirishkhanal.github.io
 open index.html
 ```
 
 ## 📬 Contact
 * **LinkedIn:** [linkedin.com/in/shirish-khanal/](https://www.linkedin.com/in/shirish-khanal/)
-* **GitHub:** [github.com/iamshirish](https://github.com/iamshirish)
+* **GitHub:** [github.com/shirishkhanal](https://github.com/shirishkhanal)
 * **Email:** khanalshirish@gmail.com
 
 ---
