@@ -356,7 +356,7 @@ nav .nav-links a.active::after { transform: scaleX(1); }
   width: min(var(--max-width), 100% - 2 * var(--gutter));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
+  grid-template-columns: minmax(0, 1fr) 290px;
   gap: clamp(40px, 5vw, 80px);
   align-items: center;
 }
@@ -1020,7 +1020,7 @@ footer a:hover {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1080px) {
-  .hero-inner { grid-template-columns: minmax(0, 1fr) 320px; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr) 250px; }
   .project-item { grid-template-columns: minmax(0, 280px) minmax(0, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skill-group:nth-child(5), .skill-group:nth-child(6) { grid-column: auto; grid-row: auto; margin-left: 0; }
@@ -1044,7 +1044,7 @@ footer a:hover {
   }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-contours .summit { display: none; }
-  .hero-aside { max-width: 300px; }
+  .hero-aside { max-width: 230px; }
   .hero-aside::before { display: none; }
   .split { grid-template-columns: 1fr; gap: 0; }
   .project-item { grid-template-columns: 1fr; gap: 16px; }
@@ -1053,7 +1053,7 @@ footer a:hover {
   .personal-card.card-trek { grid-row: auto; }
 }
 @media (max-width: 560px) {
-  .hero-photo { max-width: 240px; }
+  .hero-photo { max-width: 190px; }
   .skills-grid, .personal-grid { grid-template-columns: 1fr; }
   .personal-card.card-trek { grid-column: auto; padding: 28px; }
   .research-card { padding: 28px 26px 30px; }
