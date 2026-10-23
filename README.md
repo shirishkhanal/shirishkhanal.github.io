@@ -4,7 +4,7 @@ Here is a clean, professional `README.md` content tailored for your repository. 
 
 # Shirish Khanal — Professional Portfolio
 
-This repository contains the source code for my personal website, a minimalist and responsive portfolio showcasing my work as a **Senior Data Engineer**, **Researcher**, and **Incoming PhD Student** at the University of Rhode Island.
+This repository contains the source code for my personal website, a minimalist and responsive portfolio showcasing my work as a **PhD Student** at the University of Rhode Island, **Researcher**, and **Data Engineer**.
 
 The site is designed with a focus on academic clarity, professional experience, and technical expertise in scalable data architecture and trustworthy machine learning.
 
@@ -18,7 +18,7 @@ You can view the live website at: **[iamshirish.github.io](https://iamshirish.gi
 * **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
 
 ## 📖 Key Sections
-* **Research Interests:** A concise overview of my focus on Trustworthy & Explainable AI, Causal Representation Learning, Algorithmic Fairness, and Biomedical ML.
+* **Research Interests:** A concise overview of my focus on Interpretable AI, Prototype Based Models, Medical and Health AI, and Causal Representation Learning.
 * **Research Experience:** Detailed summaries of my previous work, including healthcare analytics, biomedical text phenotyping, and sports analytics.
 * **Professional Experience:** Highlights from my career as a Senior Data Engineer at Fiserv and Deutsche Bank.
 * **Technical Skills:** A categorized grid of expertise in languages, Big Data processing (Spark/Scala), and cloud platforms (GCP/AWS).
